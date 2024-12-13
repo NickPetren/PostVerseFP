@@ -1,0 +1,95 @@
+.notifications-panel {
+    background: white;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    margin-top: 20px;
+}
+  
+.notifications-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #eee;
+}
+  
+.notifications-header h2 {
+    font-size: 18px;
+    font-weight: 600;
+}
+  
+.mark-all-read {
+    color: var(--primary-color);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+  
+.notifications-list {
+    max-height: 400px;
+    overflow-y: auto;
+}
+  
+.notification-item {
+    display: flex;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s;
+}
+
+.notification-item:hover {
+    background-color: rgba(99, 102, 241, 0.05);
+}
+  
+.notification-item.unread {
+    background-color: #f8f9fa;
+}
+  
+.notification-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 12px;
+}
+  
+.notification-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.notification-content {
+    flex: 1;
+}
+  
+.notification-content p {
+    margin: 0;
+    line-height: 1.4;
+}
+  
+.notification-time {
+    font-size: 12px;
+    color: var(--text-secondary);
+    display: block;
+    margin-top: 4px;
+}
+  
+.no-notifications {
+    padding: 20px;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+.notification-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+}

@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-light);
+  color: var(--text-primary);
+  line-height: 1.5;
+  background: linear-gradient(135deg, #E9E5FF 0%, #EEF2FF 50%, #E0E7FF 100%);
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+      radial-gradient(circle at 100% 50%, transparent 20%, rgba(129, 140, 248, 0.05) 21%, rgba(129, 140, 248, 0.05) 34%, transparent 35%, transparent),
+      radial-gradient(circle at 0% 50%, transparent 20%, rgba(99, 102, 241, 0.05) 21%, rgba(99, 102, 241, 0.05) 34%, transparent 35%, transparent) 0 -50px;
+  background-size: 75px 100px;
+  background-color: transparent;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(129, 140, 248, 0.1), rgba(99, 102, 241, 0.05));
+  pointer-events: none;
+  z-index: -2;
+}
+
+.error-message {
+  color: var(--error-color);
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.loading-indicator {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 480px) {
+  .container {
+      max-width: var(--container-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+      max-width: var(--container-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+      max-width: var(--container-lg);
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+      max-width: var(--container-xl);
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+@media (hover: none) {
+  .hover-only {
+      display: none;
+  }
+}
+
+@media print {
+  .no-print {
+      display: none;
+  }
+}

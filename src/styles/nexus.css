@@ -1,0 +1,16 @@
+@import './core/reset.css';
+@import './core/variables.css';
+@import './core/global.css';
+
+@import './components/auth.css';
+@import './components/layout.css';
+@import './components/modal.css';
+@import './components/post.css';
+@import './components/profile.css';
+@import './components/navigation.css';
+
+@import './features/image-gallery.css';
+@import './features/tags.css';
+@import './features/notifications.css';
+
+@import './utils/animations.css';

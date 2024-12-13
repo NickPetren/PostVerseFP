@@ -1,0 +1,33 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Remove default list styles */
+  ul, ol {
+    list-style: none;
+  }
+  
+  /* Remove default link styles */
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  /* Remove button styles */
+  button {
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+  }
+  
+  /* Set base font */
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }

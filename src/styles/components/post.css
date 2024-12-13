@@ -1,0 +1,610 @@
+.post-card {
+    width: 850px;
+    background: white;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 20px;
+    overflow: hidden;
+    position: relative;
+}
+
+.post-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15);
+}
+
+.post-overlay-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
+.posts-grid {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}  
+  
+.post-header {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post-page {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+  
+.author-info {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+  
+.author-avatar-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 12px;
+}
+  
+.author-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.author-details {
+    display: flex;
+    flex-direction: column;
+}
+  
+.author-name {
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2px;
+}
+  
+.author-username {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+  
+.post-content {
+    padding: 16px;
+    max-height: 200px;
+    overflow: hidden;
+    position: relative;
+}
+
+.post-container {
+    margin-top: 40px;
+}
+
+.post-content-wrapper {
+    position: relative;
+    cursor: pointer;
+}  
+  
+.post-content.single {
+    max-height: none;
+    overflow: visible;
+}
+
+.post-card.single {
+    width: 850px;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.post-card.single .post-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+
+.post-card.single .post-content {
+    max-height: none;
+    overflow: visible;
+}
+
+.post-card.single .action-button {
+    padding: 8px;
+}
+
+.post-content-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+  
+.post-content-link:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+  
+.post-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+}
+  
+.post-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+  
+.post-actions {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+.post-interaction {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 8px;
+}
+
+.post-images {
+    margin: 16px 0;
+    width: 100%;
+}
+
+.post-images img {
+    transition: transform 0.2s ease;
+}
+  
+.post-images img:hover {
+    transform: scale(1.02);
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 200px;
+    gap: 8px;
+}
+
+.grid-item {
+    position: relative;
+}
+  
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+  
+.has-more {
+    position: relative;
+}
+
+.more-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border-radius: 8px;
+}
+  
+.like-count {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+  
+.comment-input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #E5E7EB;
+    border-radius: 20px;
+    margin: 8px 0;
+}
+
+.username-link {
+    color: var(--text-secondary);
+    font-size: 14px;
+    text-decoration: none;
+    margin-left: 4px;
+}
+  
+.action-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px;
+    background: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+}
+  
+.action-button:hover {
+    color: var(--primary-dark);
+}
+  
+.action-button.liked {
+    color: #e31b23;
+}
+
+.show-more-button {
+    position: absolute;
+    z-index: 2;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 16px 16px;
+    background: linear-gradient(to bottom, transparent, white 40%);
+    text-align: center;
+    cursor: pointer;
+    color: #7c8fd4;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    text-decoration: none;
+}
+
+.show-more-button:hover {
+    color: #072dba;
+}
+  
+.post-menu {
+    position: relative;
+    margin-left: auto;
+}
+  
+.menu-dots {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+}
+  
+.menu-dots span {
+    width: 4px;
+    height: 4px;
+    background-color: #333;
+    border-radius: 50%;
+    display: block;
+}
+
+.menu-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background: white;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    z-index: 10;
+    min-width: 150px;
+}
+  
+.menu-dropdown button {
+    display: block;
+    width: 100%;
+    padding: 8px 16px;
+    text-align: left;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+  
+.menu-dropdown button:hover {
+    background-color: #f5f5f5;
+}
+  
+.menu-dropdown .delete-button {
+    color: var(--error-color);
+}
+
+.menu-dropdown .delete-account {
+    color: #dc3545;
+  }
+
+.comment-section {
+    border-top: 1px solid #eee;
+    padding: 16px;
+}
+
+.comment-form {
+    display: flex;
+    gap: 12px;
+}
+  
+.comment-input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+  
+.comment-input:focus {
+    border-color: #4a90e2;
+}
+  
+.comment-submit {
+    padding: 8px 16px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+  
+.comment-submit:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+  
+.comment-submit:hover:not(:disabled) {
+    background-color: #357abd;
+}
+
+.comment-container {
+    margin: 16px 0;
+    position: relative;
+}
+  
+.comment {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 12px;
+    position: relative;
+    min-height: 100px;
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 8px;
+}
+
+.comment-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.comment-avatar-container {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+  
+.comment-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.comment-username {
+    font-weight: 500;
+    color: #666;
+}
+
+.reply-button {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 8px;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    color: #666;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.comment:hover .reply-button {
+    opacity: 1;
+}
+  
+.reply-button:hover {
+    background-color: #eee;
+}
+  
+.reply-button svg {
+    width: 16px;
+    height: 16px;
+}
+  
+.reply-form {
+    margin: 8px 0 8px 40px;
+}
+  
+.reply-input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 16px;
+    margin-bottom: 8px;
+}
+  
+.reply-buttons {
+    display: flex;
+    gap: 8px;
+    justify-content: flex-end;
+}
+  
+.cancel-reply,
+.submit-reply {
+    padding: 4px 12px;
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+}
+  
+.cancel-reply {
+    background-color: #eee;
+}
+  
+.submit-reply {
+    background-color: #4a90e2;
+    color: white;
+}
+  
+.submit-reply:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.replies {
+    margin-left: 40px;
+    padding-left: 16px;
+    border-left: 2px solid #eee;
+}
+
+@media (max-width: 1024px) {
+    .post-card,
+    .post-card.single {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .post-page {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .post-header {
+        padding: 10px;
+    }
+
+    .author-avatar-container {
+        width: 35px;
+        height: 35px;
+    }
+
+    .post-content {
+        padding: 12px;
+        max-height: 150px;
+    }
+
+    .post-actions {
+        padding: 8px 20px;
+    }
+
+    .menu-dots {
+        padding: 6px;
+    }
+
+    .image-grid {
+        grid-auto-rows: 150px;
+    }
+
+    .comment-section {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .post-title {
+        font-size: 1.1rem;
+    }
+
+    .post-text {
+        font-size: 0.9rem;
+    }
+
+    .post-actions {
+        padding: 8px 15px;
+    }
+
+    .author-name {
+        font-size: 0.9rem;
+    }
+
+    .author-username {
+        font-size: 0.8rem;
+    }
+
+    .post-header {
+        padding: 8px;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: auto;
+    }
+
+    .double-image {
+        grid-template-columns: 1fr;
+    }
+
+    .double-image img {
+        height: 200px;
+    }
+
+    .comment-input {
+        font-size: 16px;
+    }
+
+    .comment-submit {
+        padding: 6px 12px;
+    }
+
+    .replies {
+        margin-left: 20px;
+        padding-left: 10px;
+    }
+
+    .comment-avatar-container {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+    .post-content {
+        max-height: none;
+    }
+}

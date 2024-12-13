@@ -1,0 +1,241 @@
+.logo {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+  
+.logo:hover {
+    color: var(--primary-dark);
+}
+
+.logo-image-container{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #c1c4ea;
+
+}
+
+.logo-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.create-button {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+  
+.create-button:hover {
+    transform: scale(1.05);
+    background-color: var(--primary-dark);
+}
+  
+.back-button {
+    position: fixed;
+    margin: 20px 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid black;
+    box-shadow: var(--shadow-sm);
+    cursor: pointer;
+    transition: transform 0.2s;
+    z-index: 10;
+}
+  
+.back-button:hover {
+    transform: scale(1.1);
+}
+
+.header-avatar-container {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #7983ef;
+    transition: border-color 0.2s;
+}
+  
+.header-avatar-container:hover {
+    border-color: #4CAF50;
+}
+
+.header-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.search-results {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+  
+.search-query {
+    margin-bottom: 24px;
+    font-size: 24px;
+    color: #333;
+}
+  
+.no-results {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 18px;
+}
+  
+.users-results,
+.posts-results {
+    margin-bottom: 40px;
+}
+  
+.users-results h3,
+.posts-results h3 {
+    margin-bottom: 16px;
+    font-size: 20px;
+    color: #333;
+}
+  
+.users-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+  
+.user-result-card {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+.user-result-link {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    text-decoration: none;
+    color: inherit;
+}
+  
+.user-result-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 16px;
+}
+  
+.user-result-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+  
+.user-result-info h4 {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+  
+.user-result-info span {
+    color: #666;
+    font-size: 14px;
+}
+
+
+
+@media (max-width: 1024px) {
+    .search-results {
+        padding: 15px;
+    }
+
+    .users-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .create-button {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+    }
+
+    .back-button {
+        width: 35px;
+        height: 35px;
+        border-width: 2px;
+    }
+
+    .search-results {
+        padding: 10px;
+    }
+
+    .user-result-card {
+        padding: 12px;
+    }
+
+    .users-grid {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .create-button {
+        bottom: 15px;
+        right: 15px;
+        width: 45px;
+        height: 45px;
+    }
+
+    .users-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .user-result-info h4 {
+        font-size: 14px;
+    }
+
+    .search-query {
+        font-size: 20px;
+        margin-bottom: 16px;
+    }
+
+    .header-avatar-container {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@supports (-webkit-touch-callout: none) {
+    .create-button {
+        bottom: max(20px, env(safe-area-inset-bottom));
+    }
+}
